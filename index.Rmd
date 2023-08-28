@@ -7,7 +7,7 @@ output: html_document
 The Weekly Meal Planner by A.M. is a powerful tool designed to help you effortlessly create a weekly meal schedule. Whether you're planning meals for yourself, your family, or an event, this tool streamlines the process and ensures that your meals are diverse and tailored to your preferences. Below, we'll guide you through how to use this tool and highlight its benefits.
 
 #### **🛠️ Set Up the Environment**
-   - Ensure you have R installed on your computer.
+   - Ensure you have R installed on your computer
    - Save the R Notebook provided as "Weekly_Meal_Planner.Rmd."
    - Install and load the necessary R packages: `tidyr`, `tidyverse`, and `googlesheets4`. You can do this using the `install.packages()` and `library()` functions in R.
 
