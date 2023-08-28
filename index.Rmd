@@ -1,6 +1,8 @@
 ---
 title: "Weekly Meal Planner - User Guide and Benefits"
-output: html_notebook
+output:
+  html_document:
+    css: styles.css
 ---
 
 ### **🍽️ Intro**
@@ -46,7 +48,7 @@ The Weekly Meal Planner by A.M. is a powerful tool designed to help you effortle
 
 # Weekly Meal Planner
 
-```{r,warning=FALSE,message=FALSE}
+```{r,warning=FALSE,message=FALSE,echo=FALSE}
 library(tidyr)
 library(tidyverse)
 library(googlesheets4)
@@ -55,7 +57,7 @@ library(kableExtra)
 gs4_auth(email = "mirza.mujanovic@gmail.com")
 ```
 
-```{r,warning=FALSE,message=FALSE}
+```{r,warning=FALSE,message=FALSE,echo=FALSE}
 # Manual import
 data <- read.csv("Meal Planner - Calendar Week 35.csv",header=TRUE)
 #or via Google Sheet package
@@ -65,7 +67,7 @@ data$type <- tolower(data$type) #lower-case the type of the meal
 ```
 
 
-```{r, warning=FALSE,message=FALSE}
+```{r, warning=FALSE,message=FALSE,echo=FALSE}
 # New data frame
 days <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
 sample_size <- length(days)
@@ -87,7 +89,7 @@ dinner <- data %>%
   add_column(days)
 ```
 
-```{r, warning=FALSE,message=FALSE}
+```{r, warning=FALSE,message=FALSE,echo=FALSE}
 # Final weekly meal schedule
 schedule <- rbind.data.frame(breakfast, lunch, dinner)
 result_table <- suppressMessages(schedule %>%
@@ -108,7 +110,7 @@ styled_table
 ```
 
 
-```{r, echo=FALSE, warning=FALSE,message=FALSE}
+```{r, echo=FALSE, warning=FALSE,message=FALSE,echo=FALSE}
 # Saving to Google Sheet 
 # Run only once!
 #uppressMessages(sheet_write(data = result_table,
