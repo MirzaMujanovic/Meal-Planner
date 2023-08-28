@@ -1,0 +1,22 @@
+days,type,meal,prep_time_min,recipe_link,effort
+Monday,breakfast,Omelette with Spinach and Feta,20,https://ketodietapp.com/Blog/lchf/perfect-spinach-and-feta-omelet,easy
+Monday,dinner,Teriyaki Noodles,30,https://mildlymeandering.com/teriyaki-noodles/,moderate
+Monday,lunch,Veal alla Mushrooms,50,https://girlcarnivore.com/veal-scallopini-alla-mushrooms/,easy
+Tuesday,breakfast,Eggplant Parmesan,45,https://www.allrecipes.com/recipe/25321/eggplant-parmesan-ii/,moderate
+Tuesday,dinner,Fried Fish Fillet,35,https://www.licious.in/blog/recipe/fried-fish-fillet-recipe,moderate
+Tuesday,lunch,Chicken Risotto,35,https://www.kyleecooks.com/easy-chicken-vegetable-risotto/,easy
+Wednesday,breakfast,Corn Fritters,30,https://www.foodinaminute.co.nz/recipe/super-corn-fritters-450881,moderate
+Wednesday,dinner,Grilled Chicken Kabobs,20,https://www.dinneratthezoo.com/grilled-chicken-kabobs/,easy
+Wednesday,lunch,Spaghetti Sauce with Ground Beef,45,https://www.allrecipes.com/recipe/158140/spaghetti-sauce-with-ground-beef/,easy
+Thursday,breakfast,Avocado Toast with Poached Egg,15,https://cookieandkate.com/avocado-toast-recipe/,easy
+Thursday,dinner,Tortellini Alfredo,30,https://simplyhomecooked.com/creamy-tortellini-alfredo/,easy
+Thursday,lunch,Greek Salad with Maccaroni,40,https://www.spendwithpennies.com/easy-greek-pasta-salad/,easy
+Friday,breakfast,Chia Seed Pudding,10,https://minimalistbaker.com/overnight-chocolate-chia-seed-pudding/,super easy
+Friday,dinner,Cesar's Salad,30,https://natashaskitchen.com/caesar-salad-recipe/,easy
+Friday,lunch,Grilled Chicken Breast with Gnocci,35,https://www.skinnytaste.com/gnocchi-with-grilled-chicken-in-roasted-red-pepper-sauce/,moderate
+Saturday,breakfast,Overnight Oats,10,https://feelgoodfoodie.net/recipe/overnight-oats/,super easy
+Saturday,dinner,Humus with Grissini Sticks,5,https://www.dreamstime.com/homemade-hummus-pita-grissini-bread-sticks-middle-eastern-traditional-authentic-arab-cuisine-image144083612,easy
+Saturday,lunch,Spaghetti Squash with Pesto,40,https://sweetcaramelsunday.com/spaghetti-al-pesto/,easy
+Sunday,breakfast,Sausages,15,https://www.daringgourmet.com/homemade-breakfast-sausage-links-or-patties/,easy
+Sunday,dinner,Yogurt Parfait with Granola,10,https://www.aheadofthyme.com/2015/12/fruit-and-yogurt-parfait-with-granola/,super easy
+Sunday,lunch,Fried Zucchini,30,https://www.thepioneerwoman.com/food-cooking/recipes/a40180565/fried-zucchini-recipe/,moderate

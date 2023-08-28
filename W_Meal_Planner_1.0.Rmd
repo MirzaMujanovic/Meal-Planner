@@ -57,10 +57,10 @@ gs4_auth(email = "mirza.mujanovic@gmail.com")
 
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 # Manual import
-# data <- read.csv("Meal Planner - Sheet1.csv",header=TRUE)
+data <- read.csv("Meal Planner - Calendar Week 35.csv",header=TRUE)
 #or via Google Sheet package
 sheet_url <- "https://docs.google.com/spreadsheets/d/13uEbDKVbkLz9PpYwXzOLZAgw_ZWppBm7pjnDbHnH9yA/edit#gid=1859631947"
-data<- suppressMessages(googlesheets4::read_sheet(sheet_url,sheet = 1)) # IMPORTANT: sheet = 1 means it takes first sheet tab.
+#data<- suppressMessages(googlesheets4::read_sheet(sheet_url,sheet = 1)) # IMPORTANT: sheet = 1 means it takes first sheet tab.
 data$type <- tolower(data$type) #lower-case the type of the meal
 ```
 
