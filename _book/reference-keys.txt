@@ -1,0 +1,9 @@
+intro
+set-up-the-environment
+authenticate-with-google-sheets
+prepare-your-meals-in-google-sheets
+export-google-sheet-as-csv-optional
+access-google-sheet-data
+generate-your-meal-schedule
+benefits
+weekly-meal-planner
