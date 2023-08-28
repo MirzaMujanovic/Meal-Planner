@@ -1,7 +1,6 @@
 ---
 title: "Weekly Meal Planner - User Guide and Benefits"
-output: html_notebook
-knit: rmarkdown::html_notebook()
+output: html_document
 ---
 
 ### **🍽️ Intro**
