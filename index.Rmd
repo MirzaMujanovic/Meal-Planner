@@ -1,6 +1,6 @@
 ---
 title: "Weekly Meal Planner - User Guide and Benefits"
-output: html_document
+output: html_notebook
 ---
 
 ### **🍽️ Intro**
