@@ -671,6 +671,66 @@ moderate
 </tr>
 </tbody>
 </table>
+<div id="r-code" class="section level2">
+<h2>R code</h2>
+<pre class="r"><code># Packages
+library(tidyr)
+library(tidyverse)
+library(googlesheets4)
+library(knitr)
+library(kableExtra)
+gs4_auth(email = &quot;YOUR_GOOGLE_EMAIL&quot;) # INSERT YOUR G-MAIL ASSOCIATED WITH YOUR GOOGLE SHEET ACCOUNT
+
+# Manual import
+data &lt;- read.csv(&quot;Meal Planner - Calendar Week 35.csv&quot;,header=TRUE)
+#or via Google Sheet package
+sheet_url &lt;- &quot;YOUR_GOOGLE_SHEET_URL&quot;
+#data&lt;- suppressMessages(googlesheets4::read_sheet(sheet_url,sheet = 1)) # IMPORTANT: sheet = 1 means it takes first sheet tab.
+data$type &lt;- tolower(data$type) #lower-case the type of the meal
+
+# New data frame with days
+days &lt;- c(&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;)
+sample_size &lt;- length(days)
+
+# Randomization per meal type
+breakfast &lt;- data %&gt;% 
+  filter(type==&quot;breakfast&quot;) %&gt;%
+  sample_n(size=sample_size, replace = FALSE) %&gt;%
+  add_column(days)
+
+lunch &lt;- data %&gt;% 
+  filter(type==&quot;lunch&quot;) %&gt;%
+  sample_n(size=sample_size, replace = FALSE) %&gt;%
+  add_column(days)
+
+dinner &lt;- data %&gt;% 
+  filter(type==&quot;dinner&quot;) %&gt;%
+  sample_n(size=sample_size, replace = FALSE) %&gt;%
+  add_column(days)
+
+# Final weekly meal schedule
+schedule &lt;- rbind.data.frame(breakfast, lunch, dinner)
+result_table &lt;- suppressMessages(schedule %&gt;%
+  group_by(days, type) %&gt;%
+  summarise(meal, prep_time_min, recipe_link, effort) %&gt;%
+  arrange(match(days, c(&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;))))
+
+# Nicely formatted table
+styled_table &lt;- result_table %&gt;%
+  kable(format = &quot;html&quot;,
+        escape = FALSE,
+        col.names = c(&quot;Day&quot;, &quot;Type&quot;, &quot;Meal&quot;, &quot;Prep Time (min)&quot;, &quot;Recipe Link&quot;, &quot;Effort Level&quot;)) %&gt;%
+  kable_styling(&quot;striped&quot;, full_width = FALSE) %&gt;%
+  column_spec(1, bold = TRUE)  # Apply bold formatting to the first column (days)
+
+# Print the table with the specified styling
+styled_table
+
+# Saving to the same Google Sheet you used above
+SuppressMessages(sheet_write(data = result_table,
+            ss = sheet_url,
+            sheet = &quot;Calendar Week 35&quot;)) # sheet = the week number</code></pre>
+</div>
 </div>
 
 

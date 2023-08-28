@@ -9,15 +9,15 @@ output:
 The Weekly Meal Planner by A.M. is a powerful tool designed to help you effortlessly create a weekly meal schedule. Whether you're planning meals for yourself, your family, or an event, this tool streamlines the process and ensures that your meals are diverse and tailored to your preferences. Below, we'll guide you through how to use this tool and highlight its benefits.
 
 #### **🛠️ Set Up the Environment**
-   - Ensure you have R installed on your computer
-   - Save the R Notebook provided as "Weekly_Meal_Planner.Rmd."
+   - Ensure you have R & RStudio installed on your computer
+   - Save the R Notebook provided as "index.Rmd."
    - Install and load the necessary R packages: `tidyr`, `tidyverse`, and `googlesheets4`. You can do this using the `install.packages()` and `library()` functions in R.
 
 #### **🌐 Authenticate with Google Sheets**
    - The tool utilizes Google Sheets as a data source. To access your Google Sheets, you'll need to authenticate your Google account with R. Use the `gs4_auth()` function, replacing `"YOUR_EMAIL@gmail.com"` with your Gmail address. This step grants the tool access to your Google Sheets.
 
 #### **🍲 Prepare Your Meals in Google Sheets:**
-   - Create a Google Sheet (or use an existing one) to list your favorite meals. You can access and edit the sheet using this [link](https://docs.google.com/spreadsheets/d/13uEbDKVbkLz9PpYwXzOLZAgw_ZWppBm7pjnDbHnH9yA/edit#gid=0).
+   - Create a Google Sheet (or use an existing one) to list your favorite meals. You can access this sheet using this [link](https://docs.google.com/spreadsheets/d/13uEbDKVbkLz9PpYwXzOLZAgw_ZWppBm7pjnDbHnH9yA/edit#gid=0), and make a copy for yourself.
    - In the Google Sheet, include columns for "Meal_Name," "Type," "Prep_Time_min," "Recipe_Link," and "Effort." Fill in the details for each meal.
 
 #### **💾 Export Google Sheet as CSV (Optional):**
@@ -118,4 +118,65 @@ styled_table
   #          sheet = "Calendar Week 35")) # sheet = the week 
 ```
 
+## R code
+```{r, results='hide',eval=FALSE}
+# Packages
+library(tidyr)
+library(tidyverse)
+library(googlesheets4)
+library(knitr)
+library(kableExtra)
+gs4_auth(email = "YOUR_GOOGLE_EMAIL") # INSERT YOUR G-MAIL ASSOCIATED WITH YOUR GOOGLE SHEET ACCOUNT
+
+# Manual import
+data <- read.csv("Meal Planner - Calendar Week 35.csv",header=TRUE)
+#or via Google Sheet package
+sheet_url <- "YOUR_GOOGLE_SHEET_URL"
+#data<- suppressMessages(googlesheets4::read_sheet(sheet_url,sheet = 1)) # IMPORTANT: sheet = 1 means it takes first sheet tab.
+data$type <- tolower(data$type) #lower-case the type of the meal
+
+# New data frame with days
+days <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
+sample_size <- length(days)
+
+# Randomization per meal type
+breakfast <- data %>% 
+  filter(type=="breakfast") %>%
+  sample_n(size=sample_size, replace = FALSE) %>%
+  add_column(days)
+
+lunch <- data %>% 
+  filter(type=="lunch") %>%
+  sample_n(size=sample_size, replace = FALSE) %>%
+  add_column(days)
+
+dinner <- data %>% 
+  filter(type=="dinner") %>%
+  sample_n(size=sample_size, replace = FALSE) %>%
+  add_column(days)
+
+# Final weekly meal schedule
+schedule <- rbind.data.frame(breakfast, lunch, dinner)
+result_table <- suppressMessages(schedule %>%
+  group_by(days, type) %>%
+  summarise(meal, prep_time_min, recipe_link, effort) %>%
+  arrange(match(days, c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"))))
+
+# Nicely formatted table
+styled_table <- result_table %>%
+  kable(format = "html",
+        escape = FALSE,
+        col.names = c("Day", "Type", "Meal", "Prep Time (min)", "Recipe Link", "Effort Level")) %>%
+  kable_styling("striped", full_width = FALSE) %>%
+  column_spec(1, bold = TRUE)  # Apply bold formatting to the first column (days)
+
+# Print the table with the specified styling
+styled_table
+
+# Saving to the same Google Sheet you used above
+SuppressMessages(sheet_write(data = result_table,
+            ss = sheet_url,
+            sheet = "Calendar Week 35")) # sheet = the week number
+
+```
 
