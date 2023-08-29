@@ -2,15 +2,15 @@
 The Weekly Meal Planner by A.M. is a powerful tool designed to help you effortlessly create a weekly meal schedule. Whether you're planning meals for yourself, your family, or an event, this tool streamlines the process and ensures that your meals are diverse and tailored to your preferences. Below, we'll guide you through how to use this tool and highlight its benefits.
 
 #### **🛠️ Set Up the Environment**
-   - Ensure you have R installed on your computer.
-   - Save the R Notebook provided as "Weekly_Meal_Planner.Rmd."
+   - Ensure you have R & RStudio installed on your computer
+   - Save the R Notebook provided as "index.Rmd."
    - Install and load the necessary R packages: `tidyr`, `tidyverse`, and `googlesheets4`. You can do this using the `install.packages()` and `library()` functions in R.
 
 #### **🌐 Authenticate with Google Sheets**
    - The tool utilizes Google Sheets as a data source. To access your Google Sheets, you'll need to authenticate your Google account with R. Use the `gs4_auth()` function, replacing `"YOUR_EMAIL@gmail.com"` with your Gmail address. This step grants the tool access to your Google Sheets.
 
 #### **🍲 Prepare Your Meals in Google Sheets:**
-   - Create a Google Sheet (or use an existing one) to list your favorite meals. You can access and edit the sheet using this [link](https://docs.google.com/spreadsheets/d/13uEbDKVbkLz9PpYwXzOLZAgw_ZWppBm7pjnDbHnH9yA/edit#gid=0).
+   - Create a Google Sheet (or use an existing one) to list your favorite meals. You can access this sheet using this [link](https://docs.google.com/spreadsheets/d/13uEbDKVbkLz9PpYwXzOLZAgw_ZWppBm7pjnDbHnH9yA/edit#gid=0), and make a copy for yourself.
    - In the Google Sheet, include columns for "Meal_Name," "Type," "Prep_Time_min," "Recipe_Link," and "Effort." Fill in the details for each meal.
 
 #### **💾 Export Google Sheet as CSV (Optional):**
