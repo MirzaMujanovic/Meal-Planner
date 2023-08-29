@@ -174,8 +174,8 @@ pre code {
 <div id="set-up-the-environment" class="section level4">
 <h4><strong>🛠️ Set Up the Environment</strong></h4>
 <ul>
-<li>Ensure you have R installed on your computer</li>
-<li>Save the R Notebook provided as “Weekly_Meal_Planner.Rmd.”</li>
+<li>Ensure you have R &amp; RStudio installed on your computer</li>
+<li>Save the R Notebook provided as “index.Rmd.”</li>
 <li>Install and load the necessary R packages: <code>tidyr</code>, <code>tidyverse</code>, and <code>googlesheets4</code>. You can do this using the <code>install.packages()</code> and <code>library()</code> functions in R.</li>
 </ul>
 </div>
@@ -188,7 +188,7 @@ pre code {
 <div id="prepare-your-meals-in-google-sheets" class="section level4">
 <h4><strong>🍲 Prepare Your Meals in Google Sheets:</strong></h4>
 <ul>
-<li>Create a Google Sheet (or use an existing one) to list your favorite meals. You can access and edit the sheet using this <a href="https://docs.google.com/spreadsheets/d/13uEbDKVbkLz9PpYwXzOLZAgw_ZWppBm7pjnDbHnH9yA/edit#gid=0">link</a>.</li>
+<li>Create a Google Sheet (or use an existing one) to list your favorite meals. You can access this sheet using this <a href="https://docs.google.com/spreadsheets/d/13uEbDKVbkLz9PpYwXzOLZAgw_ZWppBm7pjnDbHnH9yA/edit#gid=0">link</a>, and make a copy for yourself.</li>
 <li>In the Google Sheet, include columns for “Meal_Name,” “Type,” “Prep_Time_min,” “Recipe_Link,” and “Effort.” Fill in the details for each meal.</li>
 </ul>
 </div>
@@ -237,8 +237,8 @@ Type
 <th style="text-align:left;">
 Meal
 </th>
-<th style="text-align:right;">
-Prep Time (min)
+<th style="text-align:left;">
+PrepTime (min)
 </th>
 <th style="text-align:left;">
 Recipe Link
@@ -253,19 +253,19 @@ Effort Level
 <td style="text-align:left;font-weight: bold;">
 Monday
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 70px; ">
 breakfast
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 150px; ">
 Omelette with Spinach and Feta
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;width: 200px; ">
 20
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 200px; ">
 <a href="https://ketodietapp.com/Blog/lchf/perfect-spinach-and-feta-omelet" class="uri">https://ketodietapp.com/Blog/lchf/perfect-spinach-and-feta-omelet</a>
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 100px; ">
 easy
 </td>
 </tr>
@@ -273,19 +273,19 @@ easy
 <td style="text-align:left;font-weight: bold;">
 Monday
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 70px; ">
 dinner
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 150px; ">
 Teriyaki Noodles
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;width: 200px; ">
 30
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 200px; ">
 <a href="https://mildlymeandering.com/teriyaki-noodles/" class="uri">https://mildlymeandering.com/teriyaki-noodles/</a>
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 100px; ">
 moderate
 </td>
 </tr>
@@ -293,19 +293,19 @@ moderate
 <td style="text-align:left;font-weight: bold;">
 Monday
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 70px; ">
 lunch
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 150px; ">
 Veal alla Mushrooms
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;width: 200px; ">
 50
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 200px; ">
 <a href="https://girlcarnivore.com/veal-scallopini-alla-mushrooms/" class="uri">https://girlcarnivore.com/veal-scallopini-alla-mushrooms/</a>
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 100px; ">
 easy
 </td>
 </tr>
@@ -313,19 +313,19 @@ easy
 <td style="text-align:left;font-weight: bold;">
 Tuesday
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 70px; ">
 breakfast
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 150px; ">
 Eggplant Parmesan
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;width: 200px; ">
 45
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 200px; ">
 <a href="https://www.allrecipes.com/recipe/25321/eggplant-parmesan-ii/" class="uri">https://www.allrecipes.com/recipe/25321/eggplant-parmesan-ii/</a>
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 100px; ">
 moderate
 </td>
 </tr>
@@ -333,19 +333,19 @@ moderate
 <td style="text-align:left;font-weight: bold;">
 Tuesday
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 70px; ">
 dinner
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 150px; ">
 Fried Fish Fillet
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;width: 200px; ">
 35
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 200px; ">
 <a href="https://www.licious.in/blog/recipe/fried-fish-fillet-recipe" class="uri">https://www.licious.in/blog/recipe/fried-fish-fillet-recipe</a>
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 100px; ">
 moderate
 </td>
 </tr>
@@ -353,19 +353,19 @@ moderate
 <td style="text-align:left;font-weight: bold;">
 Tuesday
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 70px; ">
 lunch
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 150px; ">
 Chicken Risotto
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;width: 200px; ">
 35
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 200px; ">
 <a href="https://www.kyleecooks.com/easy-chicken-vegetable-risotto/" class="uri">https://www.kyleecooks.com/easy-chicken-vegetable-risotto/</a>
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 100px; ">
 easy
 </td>
 </tr>
@@ -373,19 +373,19 @@ easy
 <td style="text-align:left;font-weight: bold;">
 Wednesday
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 70px; ">
 breakfast
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 150px; ">
 Corn Fritters
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;width: 200px; ">
 30
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 200px; ">
 <a href="https://www.foodinaminute.co.nz/recipe/super-corn-fritters-450881" class="uri">https://www.foodinaminute.co.nz/recipe/super-corn-fritters-450881</a>
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 100px; ">
 moderate
 </td>
 </tr>
@@ -393,19 +393,19 @@ moderate
 <td style="text-align:left;font-weight: bold;">
 Wednesday
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 70px; ">
 dinner
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 150px; ">
 Grilled Chicken Kabobs
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;width: 200px; ">
 20
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 200px; ">
 <a href="https://www.dinneratthezoo.com/grilled-chicken-kabobs/" class="uri">https://www.dinneratthezoo.com/grilled-chicken-kabobs/</a>
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 100px; ">
 easy
 </td>
 </tr>
@@ -413,19 +413,19 @@ easy
 <td style="text-align:left;font-weight: bold;">
 Wednesday
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 70px; ">
 lunch
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 150px; ">
 Spaghetti Sauce with Ground Beef
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;width: 200px; ">
 45
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 200px; ">
 <a href="https://www.allrecipes.com/recipe/158140/spaghetti-sauce-with-ground-beef/" class="uri">https://www.allrecipes.com/recipe/158140/spaghetti-sauce-with-ground-beef/</a>
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 100px; ">
 easy
 </td>
 </tr>
@@ -433,19 +433,19 @@ easy
 <td style="text-align:left;font-weight: bold;">
 Thursday
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 70px; ">
 breakfast
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 150px; ">
 Avocado Toast with Poached Egg
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;width: 200px; ">
 15
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 200px; ">
 <a href="https://cookieandkate.com/avocado-toast-recipe/" class="uri">https://cookieandkate.com/avocado-toast-recipe/</a>
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 100px; ">
 easy
 </td>
 </tr>
@@ -453,19 +453,19 @@ easy
 <td style="text-align:left;font-weight: bold;">
 Thursday
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 70px; ">
 dinner
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 150px; ">
 Tortellini Alfredo
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;width: 200px; ">
 30
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 200px; ">
 <a href="https://simplyhomecooked.com/creamy-tortellini-alfredo/" class="uri">https://simplyhomecooked.com/creamy-tortellini-alfredo/</a>
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 100px; ">
 easy
 </td>
 </tr>
@@ -473,19 +473,19 @@ easy
 <td style="text-align:left;font-weight: bold;">
 Thursday
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 70px; ">
 lunch
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 150px; ">
 Greek Salad with Maccaroni
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;width: 200px; ">
 40
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 200px; ">
 <a href="https://www.spendwithpennies.com/easy-greek-pasta-salad/" class="uri">https://www.spendwithpennies.com/easy-greek-pasta-salad/</a>
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 100px; ">
 easy
 </td>
 </tr>
@@ -493,19 +493,19 @@ easy
 <td style="text-align:left;font-weight: bold;">
 Friday
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 70px; ">
 breakfast
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 150px; ">
 Chia Seed Pudding
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;width: 200px; ">
 10
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 200px; ">
 <a href="https://minimalistbaker.com/overnight-chocolate-chia-seed-pudding/" class="uri">https://minimalistbaker.com/overnight-chocolate-chia-seed-pudding/</a>
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 100px; ">
 super easy
 </td>
 </tr>
@@ -513,19 +513,19 @@ super easy
 <td style="text-align:left;font-weight: bold;">
 Friday
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 70px; ">
 dinner
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 150px; ">
 Cesar’s Salad
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;width: 200px; ">
 30
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 200px; ">
 <a href="https://natashaskitchen.com/caesar-salad-recipe/" class="uri">https://natashaskitchen.com/caesar-salad-recipe/</a>
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 100px; ">
 easy
 </td>
 </tr>
@@ -533,19 +533,19 @@ easy
 <td style="text-align:left;font-weight: bold;">
 Friday
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 70px; ">
 lunch
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 150px; ">
 Grilled Chicken Breast with Gnocci
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;width: 200px; ">
 35
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 200px; ">
 <a href="https://www.skinnytaste.com/gnocchi-with-grilled-chicken-in-roasted-red-pepper-sauce/" class="uri">https://www.skinnytaste.com/gnocchi-with-grilled-chicken-in-roasted-red-pepper-sauce/</a>
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 100px; ">
 moderate
 </td>
 </tr>
@@ -553,19 +553,19 @@ moderate
 <td style="text-align:left;font-weight: bold;">
 Saturday
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 70px; ">
 breakfast
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 150px; ">
 Overnight Oats
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;width: 200px; ">
 10
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 200px; ">
 <a href="https://feelgoodfoodie.net/recipe/overnight-oats/" class="uri">https://feelgoodfoodie.net/recipe/overnight-oats/</a>
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 100px; ">
 super easy
 </td>
 </tr>
@@ -573,19 +573,19 @@ super easy
 <td style="text-align:left;font-weight: bold;">
 Saturday
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 70px; ">
 dinner
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 150px; ">
 Humus with Grissini Sticks
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;width: 200px; ">
 5
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 200px; ">
 <a href="https://www.dreamstime.com/homemade-hummus-pita-grissini-bread-sticks-middle-eastern-traditional-authentic-arab-cuisine-image144083612" class="uri">https://www.dreamstime.com/homemade-hummus-pita-grissini-bread-sticks-middle-eastern-traditional-authentic-arab-cuisine-image144083612</a>
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 100px; ">
 easy
 </td>
 </tr>
@@ -593,19 +593,19 @@ easy
 <td style="text-align:left;font-weight: bold;">
 Saturday
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 70px; ">
 lunch
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 150px; ">
 Spaghetti Squash with Pesto
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;width: 200px; ">
 40
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 200px; ">
 <a href="https://sweetcaramelsunday.com/spaghetti-al-pesto/" class="uri">https://sweetcaramelsunday.com/spaghetti-al-pesto/</a>
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 100px; ">
 easy
 </td>
 </tr>
@@ -613,19 +613,19 @@ easy
 <td style="text-align:left;font-weight: bold;">
 Sunday
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 70px; ">
 breakfast
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 150px; ">
 Sausages
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;width: 200px; ">
 15
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 200px; ">
 <a href="https://www.daringgourmet.com/homemade-breakfast-sausage-links-or-patties/" class="uri">https://www.daringgourmet.com/homemade-breakfast-sausage-links-or-patties/</a>
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 100px; ">
 easy
 </td>
 </tr>
@@ -633,19 +633,19 @@ easy
 <td style="text-align:left;font-weight: bold;">
 Sunday
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 70px; ">
 dinner
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 150px; ">
 Yogurt Parfait with Granola
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;width: 200px; ">
 10
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 200px; ">
 <a href="https://www.aheadofthyme.com/2015/12/fruit-and-yogurt-parfait-with-granola/" class="uri">https://www.aheadofthyme.com/2015/12/fruit-and-yogurt-parfait-with-granola/</a>
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 100px; ">
 super easy
 </td>
 </tr>
@@ -653,19 +653,19 @@ super easy
 <td style="text-align:left;font-weight: bold;">
 Sunday
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 70px; ">
 lunch
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 150px; ">
 Fried Zucchini
 </td>
-<td style="text-align:right;">
+<td style="text-align:left;width: 200px; ">
 30
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 200px; ">
 <a href="https://www.thepioneerwoman.com/food-cooking/recipes/a40180565/fried-zucchini-recipe/" class="uri">https://www.thepioneerwoman.com/food-cooking/recipes/a40180565/fried-zucchini-recipe/</a>
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 100px; ">
 moderate
 </td>
 </tr>

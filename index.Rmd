@@ -105,8 +105,23 @@ styled_table <- result_table %>%
   kable_styling("striped", full_width = FALSE) %>%
   column_spec(1, bold = TRUE)  # Apply bold formatting to the first column (days)
 
+# Create a nicely formatted table with adjusted column widths
+styled_table <- result_table %>%
+  kable(format = "html",
+        escape = FALSE,
+        align='l',
+        col.names = c("Day", "Type", "Meal", "PrepTime (min)", "Recipe Link", "Effort Level")) %>%
+  kable_styling("striped", full_width = FALSE) %>%
+  column_spec(1, bold = TRUE) %>%  # Apply bold formatting to the first column (days)
+  column_spec(2, width = "70px") %>%  # Adjust the width of the "Type" column
+  column_spec(3, width = "150px") %>%  # Adjust the width of the "Meal" column
+  column_spec(4, width = "200px") %>%  # Adjust the width of the "Prep Time (min)" column
+  column_spec(5, width = "200px") %>%  # Adjust the width of the "Recipe Link" column
+  column_spec(6, width = "100px")     # Adjust the width of the "Effort Level" column
+
 # Print the table with the specified styling
 styled_table
+
 ```
 
 
