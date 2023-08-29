@@ -177,21 +177,27 @@ result_table <- suppressMessages(schedule %>%
   summarise(meal, prep_time_min, recipe_link, effort) %>%
   arrange(match(days, c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"))))
 
-# Nicely formatted table
+# Create a nicely formatted table with adjusted column widths
 styled_table <- result_table %>%
   kable(format = "html",
         escape = FALSE,
-        col.names = c("Day", "Type", "Meal", "Prep Time (min)", "Recipe Link", "Effort Level")) %>%
+        align='l',
+        col.names = c("Day", "Type", "Meal", "PrepTime (min)", "Recipe Link", "Effort Level")) %>%
   kable_styling("striped", full_width = FALSE) %>%
-  column_spec(1, bold = TRUE)  # Apply bold formatting to the first column (days)
+  column_spec(1, bold = TRUE) %>%  # Apply bold formatting to the first column (days)
+  column_spec(2, width = "70px") %>%  # Adjust the width of the "Type" column
+  column_spec(3, width = "150px") %>%  # Adjust the width of the "Meal" column
+  column_spec(4, width = "200px") %>%  # Adjust the width of the "Prep Time (min)" column
+  column_spec(5, width = "200px") %>% # column # Adjust the width of the "Recipe Link" column
+  column_spec(6, width = "100px")     # Adjust the width of the "Effort Level" 
 
 # Print the table with the specified styling
 styled_table
 
 # Saving to the same Google Sheet you used above
 SuppressMessages(sheet_write(data = result_table,
-            ss = sheet_url,
-            sheet = "Calendar Week 35")) # sheet = the week number
+           ss = sheet_url,
+           sheet = "Calendar Week 35")) # sheet = the week number
 
 ```
 

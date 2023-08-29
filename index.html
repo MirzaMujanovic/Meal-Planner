@@ -715,21 +715,27 @@ result_table &lt;- suppressMessages(schedule %&gt;%
   summarise(meal, prep_time_min, recipe_link, effort) %&gt;%
   arrange(match(days, c(&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;))))
 
-# Nicely formatted table
+# Create a nicely formatted table with adjusted column widths
 styled_table &lt;- result_table %&gt;%
   kable(format = &quot;html&quot;,
         escape = FALSE,
-        col.names = c(&quot;Day&quot;, &quot;Type&quot;, &quot;Meal&quot;, &quot;Prep Time (min)&quot;, &quot;Recipe Link&quot;, &quot;Effort Level&quot;)) %&gt;%
+        align=&#39;l&#39;,
+        col.names = c(&quot;Day&quot;, &quot;Type&quot;, &quot;Meal&quot;, &quot;PrepTime (min)&quot;, &quot;Recipe Link&quot;, &quot;Effort Level&quot;)) %&gt;%
   kable_styling(&quot;striped&quot;, full_width = FALSE) %&gt;%
-  column_spec(1, bold = TRUE)  # Apply bold formatting to the first column (days)
+  column_spec(1, bold = TRUE) %&gt;%  # Apply bold formatting to the first column (days)
+  column_spec(2, width = &quot;70px&quot;) %&gt;%  # Adjust the width of the &quot;Type&quot; column
+  column_spec(3, width = &quot;150px&quot;) %&gt;%  # Adjust the width of the &quot;Meal&quot; column
+  column_spec(4, width = &quot;200px&quot;) %&gt;%  # Adjust the width of the &quot;Prep Time (min)&quot; column
+  column_spec(5, width = &quot;200px&quot;) %&gt;% # column # Adjust the width of the &quot;Recipe Link&quot; column
+  column_spec(6, width = &quot;100px&quot;)     # Adjust the width of the &quot;Effort Level&quot; 
 
 # Print the table with the specified styling
 styled_table
 
 # Saving to the same Google Sheet you used above
-SuppressMessages(sheet_write(data = result_table,
-            ss = sheet_url,
-            sheet = &quot;Calendar Week 35&quot;)) # sheet = the week number</code></pre>
+#SuppressMessages(sheet_write(data = result_table,
+#           ss = sheet_url,
+#           sheet = &quot;Calendar Week 35&quot;)) # sheet = the week number</code></pre>
 </div>
 </div>
 
