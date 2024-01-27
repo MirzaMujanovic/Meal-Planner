@@ -126,11 +126,10 @@ styled_table
 
 
 ```{r, echo=FALSE, warning=FALSE,message=FALSE,echo=FALSE}
-# Saving to Google Sheet 
-# Run only once!
-#uppressMessages(sheet_write(data = result_table,
- #           ss = sheet_url,
-  #          sheet = "Calendar Week 35")) # sheet = the week 
+# Saving the meal schedule in a Google Sheet Tab
+suppressMessages(sheet_write(data = result_table,
+           ss = sheet_url,
+         sheet = "Meal Schedule"))
 ```
 
 ## R code
